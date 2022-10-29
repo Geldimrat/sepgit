@@ -1,0 +1,16 @@
+@mixin flexBox($x, $y) {
+  display: flex;
+  justify-content: $x;
+  align-items: $y;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0c0c0c;
+}

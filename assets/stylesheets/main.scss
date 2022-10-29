@@ -1,0 +1,24 @@
+// base
+@import './base/mixins';
+
+// components
+@import './components/header', './components/story_card',
+  './components/show_all_card', './components/footer';
+
+// pages
+@import './pages/index', './pages/show_all_stories';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+
+.main {
+  .header {
+    padding: 15px 0 10px;
+    // max-width: 1440px;
+    width: 100%;
+    background: #0c0c0c;
+    position: fixed;
+    z-index: 9;
+  }
+}

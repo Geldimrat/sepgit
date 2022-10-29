@@ -1,0 +1,640 @@
+.landing {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  .home {
+    width: 96%;
+    max-width: 1440px;
+    margin: 0 auto;
+    background: #1e1e1e;
+    border-radius: 40px;
+    margin-top: 15px;
+    padding: 80px 0 250px;
+    position: relative;
+
+    .content {
+      .top_text {
+        font-family: 'Philosopher';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 74px;
+        line-height: 83px;
+        color: #ffffff;
+        width: 60%;
+        margin: 0 auto;
+      }
+
+      .sub_content {
+        width: 28%;
+        margin: 20px auto 0;
+        @include flexBox(center, flex-start);
+        flex-direction: column;
+
+        p.info {
+          margin-top: 30px;
+          width: 428px;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 150%;
+          color: #ffffff;
+        }
+
+        .link_btns {
+          margin-top: 30px;
+
+          .stories_btn {
+            padding: 15px 35px;
+            background: #487fff;
+            border-radius: 10px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 150%;
+            color: #000000;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+          }
+
+          .billboard_btn {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 150%;
+            color: #a6a6a6;
+            padding: 15px 35px;
+            background: #313131;
+            border-radius: 10px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            margin-left: 25px;
+          }
+        }
+
+        .partner_logos {
+          @include flexBox(flex-start, center);
+          margin-top: 90px;
+          .icon:last-child {
+            margin-left: 50px;
+          }
+        }
+      }
+    }
+
+    .bottom_side {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+
+      .left_img {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      .right_img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+
+      .bottom_vector {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .slider_and_box {
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    .slider {
+      width: 95%;
+      height: 732px;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding-top: 100px;
+      // background-color: red;
+
+      .hooper {
+        width: 98%;
+        margin: 0 auto;
+        height: 100%;
+        position: relative;
+
+        .slide {
+          width: 100%;
+          height: 100%;
+          border-radius: 40px;
+          background: #1e1e1e;
+          @include flexBox(space-between, center);
+
+          .left {
+            width: 50%;
+            height: 100%;
+            @include flexBox(flex-start, flex-start);
+            padding: 55px 55px 100px;
+            position: relative;
+
+            .vector {
+              position: absolute;
+              top: -80px;
+            }
+
+            .content {
+              height: 100%;
+              margin-left: 66px;
+              @include flexBox(space-between, flex-start);
+              flex-direction: column;
+
+              .profile {
+                @include flexBox(flex-start, center);
+
+                .photo {
+                  width: 100px;
+                  height: 100px;
+                  img {
+                    width: 100%;
+                    object-fit: cover;
+                  }
+                }
+
+                .info {
+                  margin-left: 30px;
+
+                  .fullname {
+                    font-family: 'Philosopher';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 150%;
+                    color: #ffffff;
+                  }
+
+                  .job {
+                    margin-top: 6px;
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 150%;
+                    color: #487fff;
+                  }
+                }
+              }
+
+              .class_major {
+                width: 428px;
+                font-family: 'Philosopher';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 44px;
+                line-height: 49px;
+                color: #ffffff;
+              }
+
+              .read_btn {
+                background: #487fff;
+                border-radius: 10px;
+                padding: 15px 35px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 15px;
+                line-height: 150%;
+                color: #000000;
+                text-decoration: none;
+              }
+            }
+          }
+
+          .right {
+            width: 50%;
+            height: 100%;
+            .photos {
+              width: 100%;
+              height: 100%;
+              img {
+                border-radius: 0 40px 40px 0;
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+
+        .hooper-navigation {
+          .hooper-prev {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: -25px;
+            padding: 2px;
+            border-radius: 50%;
+            // z-index: 15;
+            @include flexBox(center, center);
+            background: #313131;
+            opacity: 1;
+            svg {
+              fill: rgba(255, 255, 255, 1);
+              width: 50px !important;
+              height: 50px !important;
+            }
+          }
+
+          .hooper-next {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            right: -25px;
+            padding: 2px;
+            border-radius: 50%;
+            // z-index: 15;
+            @include flexBox(center, center);
+            background: #313131;
+            opacity: 1;
+            svg {
+              fill: rgba(255, 255, 255, 1);
+              width: 50px !important;
+              height: 50px !important;
+            }
+          }
+        }
+
+        .hooper-pagination {
+          position: absolute;
+          bottom: auto;
+
+          ol {
+            li {
+              margin-left: 12px;
+              button {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .group_mask {
+      position: absolute;
+      top: -150px;
+      left: 2px;
+      z-index: -1;
+    }
+
+    .stories {
+      width: 96%;
+      margin: 0 auto;
+      margin-top: 100px;
+      background: #487fff;
+      border: 1px solid #1e1e1e;
+      border-radius: 40px;
+      padding: 155px 30px 78px 60px;
+      position: relative;
+      @include flexBox(space-between, flex-start);
+
+      .left {
+        width: 38%;
+        height: 100%;
+
+        .top_text {
+          p.title {
+            font-family: 'Philosopher';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 54px;
+            line-height: 60px;
+            color: #000000;
+          }
+
+          p.info {
+            margin-top: 5px;
+            font-family: 'Philosopher';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 20px;
+            color: #000000;
+          }
+        }
+
+        .girl_imgs {
+          margin-top: 50px;
+          height: 406px;
+          //   background: orange;
+          position: relative;
+
+          .back_shadow {
+            position: absolute;
+            top: 0;
+            left: 127px;
+            width: 284px;
+            height: 284px;
+            border-radius: 50%;
+            background: #b9a8ff;
+            filter: blur(100px);
+          }
+
+          .top {
+            position: absolute;
+            top: 56px;
+            left: 0;
+            width: 66px;
+            height: 66px;
+            z-index: 2;
+
+            img {
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .top1 {
+            position: absolute;
+            top: 0px;
+            left: 131px;
+            width: 102px;
+            height: 102px;
+            z-index: 2;
+
+            img {
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .top2 {
+            position: absolute;
+            top: 65px;
+            right: 13px;
+            width: 101px;
+            height: 101px;
+            z-index: 2;
+
+            img {
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .middle {
+            position: absolute;
+            top: 165px;
+            left: 9px;
+            width: 131px;
+            height: 129px;
+            z-index: 2;
+
+            img {
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .middle1 {
+            position: absolute;
+            top: 116px;
+            left: 165px;
+            width: 168px;
+            height: 169px;
+            z-index: 2;
+
+            img {
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .middle2 {
+            position: absolute;
+            top: 212px;
+            right: 0;
+            width: 75px;
+            height: 74px;
+            z-index: 2;
+
+            img {
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .bottom {
+            position: absolute;
+            bottom: 0;
+            left: 123px;
+            width: 101px;
+            height: 101px;
+            z-index: 2;
+
+            img {
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .bottom1 {
+            position: absolute;
+            bottom: 0;
+            right: 71px;
+            width: 102px;
+            height: 102px;
+            z-index: 2;
+
+            img {
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .right {
+        width: 58%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        grid-gap: 15px;
+      }
+
+      .show_all_stories {
+        width: 370px;
+        height: 250px;
+        background: #ffffff;
+        border-radius: 20px 0px 0px 20px;
+        position: absolute;
+        bottom: 78px;
+        right: 0;
+        padding: 40px;
+        text-decoration: none;
+        cursor: pointer;
+
+        p.text {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 30px;
+          line-height: 36px;
+          color: #000000;
+        }
+
+        .icon {
+          margin-top: 28px;
+        }
+      }
+
+      .top_line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .media_and_partners {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+
+    .multi_group_mask {
+      width: 100%;
+      position: absolute;
+      top: -150px;
+      left: 0;
+      z-index: -1;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .media {
+      width: 96%;
+      margin: 0 auto;
+      padding-top: 100px;
+
+      p.title {
+        font-family: 'Philosopher';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 54px;
+        line-height: 60px;
+        color: #ffffff;
+        margin-left: 34px;
+      }
+
+      .videos_and_podcasts {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(635px, 1fr));
+        .video {
+          width: 635px;
+          height: 270px;
+          border: 1px solid #464646;
+          border-radius: 30px;
+          padding: 30px 40px;
+          position: relative;
+          overflow: hidden;
+          text-decoration: none;
+
+          &:last-child {
+            justify-self: flex-end;
+          }
+
+          .top {
+            @include flexBox(flex-start, center);
+            p.name {
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 30px;
+              line-height: 36px;
+              color: #ffffff;
+            }
+            .icon {
+              margin-left: 25px;
+            }
+          }
+
+          .svg {
+            border-radius: 30px;
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .partners {
+      width: 96%;
+      margin: 0 auto;
+      padding-top: 100px;
+
+      .top {
+        margin-left: 34px;
+        p.title {
+          font-family: 'Philosopher';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 54px;
+          line-height: 60px;
+          color: #ffffff;
+        }
+
+        p.info {
+          margin-top: 15px;
+          width: 542px;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 24px;
+          color: #ffffff;
+        }
+      }
+
+      .partners_slider {
+        margin-top: 75px;
+        width: 100%;
+
+        .hooper {
+          width: 100%;
+          // height: 150px;
+
+          .partner_logo {
+            width: 100%;
+            height: 100%;
+            @include flexBox(center, center);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

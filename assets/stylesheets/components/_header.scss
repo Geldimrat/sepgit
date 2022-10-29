@@ -1,0 +1,105 @@
+.nav_menu {
+  max-width: 1440px;
+  width: 96%;
+  margin: 0 auto;
+  @include flexBox(space-between, flex-start);
+  position: relative;
+
+  .left {
+    width: 90%;
+    // height: 80px;
+    padding: 8px 30px;
+    border: 1px solid #464646;
+    border-radius: 20px;
+    @include flexBox(space-between, center);
+
+    .nav_links {
+      @include flexBox(center, center);
+      list-style: none;
+
+      li {
+        &:not(:last-child) {
+          margin-right: 50px;
+        }
+
+        a {
+          font-family: 'Inter';
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .right {
+    width: 9%;
+    // height: 80px;
+    padding: 22px 0;
+    border: 1px solid #464646;
+    border-radius: 20px;
+    @include flexBox(center, center);
+    background: #0c0c0c;
+    position: absolute;
+    right: 0;
+    
+    .lang_dropdown {
+      display: inline-block;
+      
+      &:hover .lang_content {
+        display: block;
+      }
+
+      .lang_btn {
+        @include flexBox(center, center);
+        background: none;
+        border: none;
+        cursor: pointer;
+        span {
+          text-align: left;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          font-family: 'Inter';
+          color: #ffffff;
+          display: inline-block;
+          width: 40px;
+        }
+        img {
+          width: 33px;
+          height: 25px;
+          object-fit: cover;
+        }
+      }
+
+      .lang_content {
+        display: none;
+
+        .lang_btn {
+          @include flexBox(flex-start, center);
+          background: none;
+          border: none;
+          cursor: pointer;
+          margin-top: 30px;
+          span {
+            text-align: left;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            font-family: 'Inter';
+            color: #ffffff;
+            display: inline-block;
+            width: 40px;
+          }
+          img {
+            width: 33px;
+            height: 25px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
