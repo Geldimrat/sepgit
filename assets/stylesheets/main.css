@@ -793,12 +793,12 @@ html {
   border: none;
   cursor: pointer;
   text-decoration: none;
-  display: block;
   text-align: center;
 }
 
 @media screen and (max-width: 600px) {
   .landing .home .content .sub_content .link_btns .stories_btn {
+    display: block;
     width: 100%;
   }
 }

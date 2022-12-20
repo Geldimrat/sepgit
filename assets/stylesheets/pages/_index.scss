@@ -110,10 +110,10 @@
             border: none;
             cursor: pointer;
             text-decoration: none;
-            display: block;
             text-align: center;
-
+            
             @include mobile {
+              display: block;
               width: 100%;
             }
           }
