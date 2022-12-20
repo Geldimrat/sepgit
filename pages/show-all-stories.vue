@@ -16,23 +16,31 @@
     </div>
 
     <div class="people_stories">
-      <Card v-for="(e, i) in people" :key="i" :single_card="e" />
+      <Card
+        v-for="(e, i) in people"
+        :key="i"
+        :single_card="e"
+        @user_id="showID"
+      />
     </div>
+    <DialogModal :conv_info="user_info" />
   </div>
 </template>
 
 <script>
 import Card from '@/components/show_all_card.vue'
+import DialogModal from '@/components/dialog.vue'
 export default {
   components: {
     Card,
+    DialogModal,
   },
   data() {
     const people = [
       {
         id: 1,
         img: '1.png',
-        text: 'I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..',
+        text: 'I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..',
         back_color: '#282C50',
       },
       {
@@ -109,8 +117,18 @@ export default {
       },
     ]
     return {
+      user_info: {},
       people,
     }
+  },
+  methods: {
+    showID(id) {
+      this.people.forEach((e) => {
+        if (e.id == id) {
+          this.user_info = e
+        }
+      })
+    },
   },
 }
 </script>

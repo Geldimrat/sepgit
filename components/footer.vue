@@ -47,7 +47,7 @@
         </div>
       </div>
       <div class="right">
-        <div class="left">
+        <div class="ssm">
           <a href="" class="icon_text">
             <div class="icon">
               <svg
@@ -103,7 +103,7 @@
             <span>sanly.bilim@mail.com</span>
           </a>
         </div>
-        <div class="left">
+        <div class="ssm">
           <a href="" class="icon_text">
             <div class="icon">
               <svg

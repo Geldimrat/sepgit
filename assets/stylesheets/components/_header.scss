@@ -1,104 +1,218 @@
-.nav_menu {
-  max-width: 1440px;
-  width: 96%;
-  margin: 0 auto;
-  @include flexBox(space-between, flex-start);
-  position: relative;
+.header {
+  padding: 15px 0 10px;
+  width: 100%;
+  background: #0c0c0c;
+  position: fixed;
+  z-index: 99;
 
-  .left {
-    width: 90%;
-    // height: 80px;
-    padding: 8px 30px;
-    border: 1px solid #464646;
-    border-radius: 20px;
-    @include flexBox(space-between, center);
+  .nav_menu {
+    width: 96%;
+    margin: 0 auto;
+    position: relative;
 
-    .nav_links {
-      @include flexBox(center, center);
-      list-style: none;
-
-      li {
-        &:not(:last-child) {
-          margin-right: 50px;
-        }
-
-        a {
-          font-family: 'Inter';
-          text-decoration: none;
-          font-weight: 500;
-          font-size: 18px;
-          line-height: 22px;
-          color: #ffffff;
-        }
-      }
+    @include tablet {
+      position: static;
     }
-  }
 
-  .right {
-    width: 9%;
-    // height: 80px;
-    padding: 22px 0;
-    border: 1px solid #464646;
-    border-radius: 20px;
-    @include flexBox(center, center);
-    background: #0c0c0c;
-    position: absolute;
-    right: 0;
-    
-    .lang_dropdown {
-      display: inline-block;
-      
-      &:hover .lang_content {
-        display: block;
+    .left {
+      width: 92%;
+      padding: 8px 30px;
+      border: 1px solid #464646;
+      border-radius: 20px;
+      @include flexBox(space-between, center);
+
+      @include tablet {
+        width: 100%;
       }
 
-      .lang_btn {
+      .logo_links {
         @include flexBox(center, center);
-        background: none;
-        border: none;
-        cursor: pointer;
-        span {
-          text-align: left;
-          font-weight: 500;
-          font-size: 18px;
-          line-height: 22px;
-          font-family: 'Inter';
-          color: #ffffff;
-          display: inline-block;
-          width: 40px;
+
+        .logo {
+          width: 152px;
+          height: 50px;
+          @include flexBox(center, center);
+
+          @include tablet {
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
-        img {
-          width: 33px;
-          height: 25px;
-          object-fit: cover;
+
+        .nav_links {
+          @include flexBox(center, center);
+          list-style: none;
+          margin-left: 90px;
+
+          @include tablet {
+            position: absolute;
+            top: 0;
+            right: 100%;
+            background: #1e1e1e;
+            width: 0;
+            height: 100vh;
+            opacity: 0;
+            margin: 0;
+            z-index: -1;
+            flex-direction: column;
+            transition: 0.2s ease-in-out;
+            overflow: auto !important;
+          }
+
+          li {
+            &:not(:last-child) {
+              margin-right: 60px;
+
+              @include tablet {
+                margin: 60px 0 0;
+              }
+            }
+
+            a {
+              font-family: 'Inter';
+              text-decoration: none;
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 22px;
+              color: #ffffff;
+
+              @include tablet {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 40px;
+                line-height: 48px;
+                color: #ffffff;
+              }
+            }
+          }
+
+          .right {
+            width: 7%;
+            padding: 22px 0;
+            border: 1px solid #464646;
+            border-radius: 20px;
+            @include flexBox(center, flex-start);
+            background: #0c0c0c;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            @include tablet {
+              position: absolute;
+              top: 750px;
+              left: 50%;
+              transform: translate(-50%);
+              width: 150px;
+            }
+
+            .lang_dropdown {
+              // display: inline-block;
+              display: flex;
+              flex-direction: column;
+
+              &:hover .lang_content {
+                display: block;
+              }
+
+              .lang_btn {
+                @include flexBox(center, center);
+                background: none;
+                border: none;
+                cursor: pointer;
+                span {
+                  text-align: left;
+                  font-weight: 500;
+                  font-size: 18px;
+                  line-height: 22px;
+                  font-family: 'Inter';
+                  color: #ffffff;
+                  display: inline-block;
+                  width: 40px;
+                }
+                img {
+                  width: 33px;
+                  height: 25px;
+                  object-fit: cover;
+                }
+              }
+
+              .lang_content {
+                display: none;
+
+                .lang_btn {
+                  @include flexBox(flex-start, center);
+                  background: none;
+                  border: none;
+                  cursor: pointer;
+                  margin-top: 30px;
+                  span {
+                    text-align: left;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 22px;
+                    font-family: 'Inter';
+                    color: #ffffff;
+                    display: inline-block;
+                    width: 40px;
+                  }
+                  img {
+                    width: 33px;
+                    height: 25px;
+                    object-fit: cover;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .show_menu {
+          right: 0;
+          width: 100%;
+          opacity: 1;
         }
       }
 
-      .lang_content {
-        display: none;
+      .link_logo {
+        @include flexBox(center, center);
 
-        .lang_btn {
-          @include flexBox(flex-start, center);
-          background: none;
-          border: none;
-          cursor: pointer;
-          margin-top: 30px;
-          span {
-            text-align: left;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 22px;
-            font-family: 'Inter';
-            color: #ffffff;
-            display: inline-block;
-            width: 40px;
+        .web_logo {
+          @include mobile {
+            display: none;
           }
+          
           img {
-            width: 33px;
-            height: 25px;
+            width: 156px;
+            height: 50px;
             object-fit: cover;
           }
         }
+
+        .humburger_menu {
+          display: none;
+          cursor: pointer;
+          margin-left: 50px;
+
+          @include tablet {
+            display: block;
+          }
+        }
+      }
+
+      .show_menu {
+        display: block;
+      }
+
+      .hide_menu {
+        display: none;
+      }
+
+      .cancel {
+        display: none;
       }
     }
   }

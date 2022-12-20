@@ -4,7 +4,9 @@
       <p class="info">
         {{ card_info.text }}
       </p>
-      <nuxt-link to="" class="read_more">read more</nuxt-link>
+      <button to="" class="read_more" @click="id(card_info.id)">
+        read more
+      </button>
       <div class="bottom_right"></div>
     </div>
   </div>
@@ -14,6 +16,12 @@
 export default {
   props: {
     card_info: Object,
+  },
+  methods: {
+    id(e) {
+      this.$emit('user_id', e)
+      this.$modal.show('dialog')
+    },
   },
 }
 </script>

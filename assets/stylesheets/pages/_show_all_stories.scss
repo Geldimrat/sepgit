@@ -1,6 +1,5 @@
 .show_all_stories {
   padding: 100px 0;
-  max-width: 1440px;
   margin: 0 auto;
   .top_stories {
     width: 96%;
@@ -53,6 +52,12 @@
     grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     grid-row-gap: 106px;
     overflow: auto;
+
+    @include tablet {
+      width: 96%;
+      grid-template-columns: 350px 350px;
+      justify-content: flex-end;
+    }
   }
   ::-webkit-scrollbar {
     display: none;

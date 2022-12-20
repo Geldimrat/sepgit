@@ -1,7 +1,21 @@
+@import './variables';
+
 @mixin flexBox($x, $y) {
   display: flex;
   justify-content: $x;
   align-items: $y;
+}
+
+@mixin tablet() {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
 }
 
 * {
@@ -11,6 +25,8 @@
   scroll-behavior: smooth;
 }
 
-body {
+body,
+html {
   background: #0c0c0c;
+  overflow: hidden;
 }

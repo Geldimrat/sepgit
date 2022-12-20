@@ -1,5 +1,16 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+
+  server: {
+    port: 3000, // default: 3000
+    // host: '192.168.35.96', // default: localhost,
+    host: 'localhost', // default: localhost,
+    // https: {
+    //   key: fs.readFileSync(path.resolve(__dirname, 'server.key')),
+    //   cert: fs.readFileSync(path.resolve(__dirname, 'server.crt'))
+    // }
+  },
+
   head: {
     title: 'sepgit',
     htmlAttrs: {
@@ -11,22 +22,33 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '~/static/Top_logo.png' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: './static/top_logo.jpg' },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '~/assets/stylesheets/main.css'
-  ],
+  css: ['~/assets/stylesheets/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~plugins/vue-modal.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: [
+    // Simple usage
+    '@nuxtjs/vuetify',
+
+    // With options
+    [
+      '@nuxtjs/vuetify',
+      {
+        /* module options */
+      },
+    ],
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

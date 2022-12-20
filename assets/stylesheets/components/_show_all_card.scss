@@ -1,7 +1,7 @@
 .show_all_card {
   width: 330px;
   height: 321px;
-  padding: 107px 26px 20px;
+  padding: 107px 26px 25px;
   box-sizing: border-box;
   background: #282c50;
   border-radius: 20px;
@@ -32,6 +32,8 @@
       font-size: 16px;
       line-height: 19px;
       color: #ffffff;
+      height: 130px;
+      overflow: hidden;
     }
 
     .read_more {
@@ -42,6 +44,9 @@
       line-height: 19px;
       color: #ffffff;
       text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
     .bottom_right {

@@ -1,15 +1,20 @@
 .footer_content {
-  max-width: 1440px;
+  // max-width: 1440px;
   width: 96%;
   margin: 0 auto;
   background: #141414;
   border-radius: 20px 20px 0px 0px;
+  position: relative;
+  z-index: 6;
 
   .top {
     padding: 45px 150px;
     @include flexBox(space-between, center);
 
     .left {
+      @include tablet {
+        display: none;
+      }
       p.text {
         font-family: 'Philosopher';
         font-style: normal;
@@ -28,7 +33,7 @@
     .right {
       @include flexBox(flex-start, center);
 
-      .left {
+      .ssm {
         &:not(:first-child) {
           margin-left: 90px;
         }

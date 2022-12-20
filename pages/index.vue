@@ -5,7 +5,8 @@
         <p class="top_text">Let equality</p>
         <div class="sub_content">
           <p class="text">
-            <svg
+            bloom!
+            <!-- <svg
               width="335"
               height="80"
               viewBox="0 0 335 80"
@@ -44,7 +45,7 @@
                 d="M327.019 80C327.76 79.2804 328.348 78.426 328.749 77.4857C329.15 76.5455 329.356 75.5377 329.356 74.52C329.356 73.5022 329.15 72.4945 328.749 71.5542C328.348 70.6139 327.76 69.7596 327.019 69.0399L321.375 74.52L327.019 80Z"
                 fill="#487FFF"
               />
-            </svg>
+            </svg> -->
           </p>
           <p class="info">
             To close the gender gap completely, Woman must try to do things that
@@ -52,8 +53,10 @@
             challenge to others.
           </p>
           <div class="link_btns">
-            <button class="stories_btn">Stories</button>
-            <button class="billboard_btn">Billboard</button>
+            <nuxt-link to="#stories" class="stories_btn">Stories</nuxt-link>
+            <nuxt-link to="#billboard" class="billboard_btn"
+              >Billboard</nuxt-link
+            >
           </div>
           <div class="partner_logos">
             <div class="icon"><img src="~/static/icons/bulb.svg" alt="" /></div>
@@ -238,7 +241,12 @@
           </div>
         </div>
         <div class="right">
-          <Card v-for="(e, i) in stories" :key="i" :card_info="e" />
+          <Card
+            v-for="(e, i) in stories"
+            :key="i"
+            :card_info="e"
+            @user_id="showId"
+          />
         </div>
         <nuxt-link to="/show-all-stories" class="show_all_stories">
           <p class="text">Show all stories</p>
@@ -352,6 +360,7 @@
         </div>
       </section>
     </section>
+    <DialogModal :conv_info="user_info" />
   </div>
 </template>
 
@@ -364,6 +373,7 @@ import {
 } from 'hooper'
 import 'hooper/dist/hooper.css'
 import Card from '@/components/story_card.vue'
+import DialogModal from '@/components/dialog.vue'
 export default {
   name: 'IndexPage',
   components: {
@@ -372,40 +382,71 @@ export default {
     HooperPagination,
     HooperNavigation,
     Card,
+    DialogModal,
   },
   data() {
     const stories = [
       {
         id: 1,
-        text: 'I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..',
+        img: '1.png',
+        text: 'I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..',
         back_color: '#282C50',
       },
       {
         id: 2,
+        img: '2.png',
         text: 'I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..',
         back_color: '#6A48B1',
       },
       {
         id: 3,
+        img: '3.png',
         text: 'I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..',
         back_color: '#1B8861',
       },
       {
         id: 4,
+        img: '1.png',
         text: 'I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..',
-        back_color: '#D24B9C',
+        back_color: '#282C50',
       },
       {
         id: 5,
+        img: '2.png',
         text: 'I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..',
-        back_color: '#E74500',
+        back_color: '#6A48B1',
       },
+      // {
+      //   id: 1,
+      //   text: 'I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..',
+      //   back_color: '#282C50',
+      // },
+      // {
+      //   id: 2,
+      //   text: 'I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..',
+      //   back_color: '#6A48B1',
+      // },
+      // {
+      //   id: 3,
+      //   text: 'I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..',
+      //   back_color: '#1B8861',
+      // },
+      // {
+      //   id: 4,
+      //   text: 'I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..',
+      //   back_color: '#D24B9C',
+      // },
+      // {
+      //   id: 5,
+      //   text: 'I am Lyudmila. I am Quality Control Engineer in Industrial Construction. When I was younger, I heard many stories from grandfather who was a civil engineer. The stories inspired me to eventually become an engineer. My advice for woman..',
+      //   back_color: '#E74500',
+      // },
     ]
 
     const partners = [
       {
         id: 1,
-        src: '1.svg',
+        src: '4.svg',
       },
       {
         id: 2,
@@ -413,22 +454,32 @@ export default {
       },
       {
         id: 3,
-        src: '3.svg',
+        src: '5.svg',
       },
       {
         id: 4,
-        src: '4.svg',
+        src: '1.svg',
       },
       {
         id: 5,
-        src: '5.svg',
+        src: '3.svg',
       },
     ]
 
     return {
       stories,
       partners,
+      user_info: {},
     }
+  },
+  methods: {
+    showId(id) {
+      this.stories.forEach((e) => {
+        if (e.id == id) {
+          this.user_info = e
+        }
+      })
+    },
   },
   computed: {
     hooperSettings() {
@@ -479,6 +530,26 @@ export default {
         hoverPause: true,
         infiniteScroll: true,
         wheelControl: false,
+        breakpoints: {
+          1200: {
+            itemsToShow: 5,
+          },
+          800: {
+            itemsToShow: 2,
+          },
+          750: {
+            itemsToShow: 3,
+          },
+          600: {
+            itemsToShow: 2,
+          },
+          500: {
+            itemsToShow: 2,
+          },
+          300: {
+            itemsToShow: 1,
+          },
+        },
       }
       return settings
     },

@@ -1,8 +1,6 @@
 <template>
   <div class="main">
-    <div class="header">
-      <Header />
-    </div>
+    <Header />
     <nuxt />
     <div class="footer">
       <Footer />
