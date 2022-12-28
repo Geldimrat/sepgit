@@ -547,7 +547,7 @@ export default {
             itemsToShow: 2,
           },
           300: {
-            itemsToShow: 1,
+            itemsToShow: 1.5,
           },
         },
       }

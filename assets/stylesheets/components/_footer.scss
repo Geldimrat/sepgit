@@ -11,6 +11,10 @@
     padding: 45px 150px;
     @include flexBox(space-between, center);
 
+    @include mobile {
+      @include flexBox(center, center);
+    }
+
     .left {
       @include tablet {
         display: none;
@@ -33,9 +37,19 @@
     .right {
       @include flexBox(flex-start, center);
 
+      @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        // justify-content: center;
+      }
+
       .ssm {
         &:not(:first-child) {
           margin-left: 90px;
+
+          @include mobile {
+            margin: 0;
+          }
         }
         .icon_text {
           margin-top: 38px;
