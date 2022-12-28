@@ -152,8 +152,9 @@
           }
 
           @include mobile {
-            width: 96%;
+            width: 90%;
             margin: 119px auto 0;
+            justify-content: center;
           }
 
           .icon:last-child {

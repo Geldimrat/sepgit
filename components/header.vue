@@ -95,6 +95,13 @@ export default {
   methods: {
     toggle_btn_menu() {
       this.toggle_btn ^= true
+      if (this.toggle_btn) {
+        document.body.classList.add('hide_scroll')
+        console.log(document.body)
+      } else {
+        document.body.classList.remove('hide_scroll')
+        console.log(document.body)
+      }
     },
   },
 }

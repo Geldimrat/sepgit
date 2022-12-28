@@ -128,7 +128,7 @@ html {
 
 @media screen and (max-width: 1000px) {
   .header .nav_menu .left .logo_links .nav_links li:not(:last-child) {
-    margin: 60px 0 0;
+    margin: 50px 0 0;
   }
 }
 
@@ -139,17 +139,6 @@ html {
   font-size: 18px;
   line-height: 22px;
   color: #ffffff;
-}
-
-@media screen and (max-width: 1000px) {
-  .header .nav_menu .left .logo_links .nav_links li a {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 48px;
-    color: #ffffff;
-  }
 }
 
 .header .nav_menu .left .logo_links .nav_links .right {
@@ -175,11 +164,11 @@ html {
 @media screen and (max-width: 1000px) {
   .header .nav_menu .left .logo_links .nav_links .right {
     position: absolute;
-    top: 750px;
+    top: 80%;
     left: 50%;
-    -webkit-transform: translate(-50%);
-            transform: translate(-50%);
-    width: 150px;
+    -webkit-transform: translate(-50%, -80%);
+            transform: translate(-50%, -80%);
+    width: 140px;
   }
 }
 
@@ -895,8 +884,11 @@ html {
 
 @media screen and (max-width: 600px) {
   .landing .home .content .sub_content .partner_logos {
-    width: 96%;
+    width: 90%;
     margin: 119px auto 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
