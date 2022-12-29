@@ -8,14 +8,33 @@
         <div class="logo_links">
           <div class="logo">
             <nuxt-link to="/"
-              ><img src="~/static/sepgit_logo.svg" alt=""
+              ><img
+                src="~/static/sepgit_logo.svg"
+                @click="toggle_btn_hide"
+                alt=""
             /></nuxt-link>
           </div>
           <ul :class="[toggle_btn ? 'show_menu' : '', 'nav_links']">
-            <li><nuxt-link to="/#billboard">Billboard</nuxt-link></li>
-            <li><nuxt-link to="/#stories">Stories</nuxt-link></li>
-            <li><nuxt-link to="/#media">Media</nuxt-link></li>
-            <li><nuxt-link to="/#partners">Partners</nuxt-link></li>
+            <li>
+              <nuxt-link to="/#billboard"
+                ><span @click="toggle_btn_hide">Billboard</span></nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link to="/#stories"
+                ><span @click="toggle_btn_hide">Stories</span></nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link to="/#media"
+                ><span @click="toggle_btn_hide">Media</span></nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link to="/#partners"
+                ><span @click="toggle_btn_hide">Partners</span></nuxt-link
+              >
+            </li>
             <div class="right">
               <div class="lang_dropdown">
                 <button class="lang_btn">
@@ -41,7 +60,7 @@
           </nuxt-link>
           <div
             :class="[toggle_btn ? 'hide_menu' : '', 'humburger_menu']"
-            @click="toggle_btn_menu"
+            @click="toggle_btn_show"
           >
             <svg
               width="30"
@@ -65,7 +84,7 @@
         </div>
         <div
           :class="[toggle_btn ? 'show_menu' : 'hide_menu']"
-          @click="toggle_btn_menu"
+          @click="toggle_btn_hide"
           style="color: white"
         >
           X
@@ -93,15 +112,11 @@ export default {
     }
   },
   methods: {
-    toggle_btn_menu() {
-      this.toggle_btn ^= true
-      if (this.toggle_btn) {
-        document.body.classList.add('hide_scroll')
-        console.log(document.body)
-      } else {
-        document.body.classList.remove('hide_scroll')
-        console.log(document.body)
-      }
+    toggle_btn_show() {
+      this.toggle_btn = true
+    },
+    toggle_btn_hide() {
+      this.toggle_btn = false
     },
   },
 }
